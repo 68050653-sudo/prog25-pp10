@@ -14,18 +14,38 @@ def test_year_is_zero():
     else:
         return False
 
-# Test 2 - ...
+# Test 2 - Test normal leap year (divisible by 4 but not by 100)
+# Reason to fail: is_leap_year fails to detect normal leap year
 def test_2():
-    pass
+    year = 2024
+    if is_leap_year(year) == True:
+        return True
+    else:
+        return False
 
-# Test 3 - ...
+# Test 3 - Test century non-leap year (divisible by 100 but not by 400)
+# Reason to fail: is_leap_year fails to exclude century non-leap year
 def test_3():
-    pass
+    year = 1900
+    if is_leap_year(year) == False:
+        return True
+    else:
+        return False
 
-# Test 4 - ...
+# Test 4 - Test century leap year (divisible by 400)
+# Reason to fail: is_leap_year fails to include 400-year leap year
 def test_4():
-    pass
+    year = 2000
+    if is_leap_year(year) == True:
+        return True
+    else:
+        return False
 
-# Test 5 - ...
+# Test 5 - Test non-leap year (not divisible by 4)
+# Reason to fail: is_leap_year incorrectly marks normal year as leap
 def test_5():
-    pass
+    year = 2023
+    if is_leap_year(year) == False:
+        return True
+    else:
+        return False
